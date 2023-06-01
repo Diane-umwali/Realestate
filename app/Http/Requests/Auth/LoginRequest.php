@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\authenticate;
 
 class LoginRequest extends FormRequest
 {
@@ -29,7 +29,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'login' => ['required', 'string'],
             'password' => ['required', 'string'],
         ];
     }
